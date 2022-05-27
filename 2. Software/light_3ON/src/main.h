@@ -17,7 +17,8 @@
 #define Switch4IO  
 
 // 定义灯泡
-#define Light1   1
+#define Light0   0   //存放首页开关状态
+#define Light1   1   //存放灯泡1开关状态
 #define Light2   2
 #define Light3   3
 #define Light4   4

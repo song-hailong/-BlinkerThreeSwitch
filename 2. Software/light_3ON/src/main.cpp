@@ -30,14 +30,14 @@ void switch_callback(const String & state)
         LightState.OpenCloseLight(ONLight, Light1); // 开灯
         LightState.OpenCloseLight(ONLight, Light2); // 开灯
         LightState.OpenCloseLight(ONLight, Light3); // 开灯
-        LightState.LedState[0] = ONLight;
+        // LightState.LedState[0] = ONLight;
     }
     else
     {
         LightState.OpenCloseLight(OFFLight, Light1); // 关灯
         LightState.OpenCloseLight(OFFLight, Light2); // 关灯
         LightState.OpenCloseLight(OFFLight, Light3); // 关灯
-        LightState.LedState[0] = OFFLight;
+        // LightState.LedState[0] = OFFLight;
     }
 }
 
@@ -97,7 +97,7 @@ void miotPowerState(const String & state, uint8_t num)
             LightState.OpenCloseLight(ONLight, Light1); // 开灯
             LightState.OpenCloseLight(ONLight, Light2); // 开灯
             LightState.OpenCloseLight(ONLight, Light3); // 开灯
-            LightState.LedState[num] = ONLight;
+            // LightState.LedState[num] = ONLight;
         }
         else {
             LightState.OpenCloseLight(ONLight, num); // 开灯
@@ -113,7 +113,7 @@ void miotPowerState(const String & state, uint8_t num)
             LightState.OpenCloseLight(OFFLight, Light1); // 关灯
             LightState.OpenCloseLight(OFFLight, Light2); // 关灯
             LightState.OpenCloseLight(OFFLight, Light3); // 关灯
-            LightState.LedState[num] = OFFLight;
+            // LightState.LedState[num] = OFFLight;
         }
         else {
             LightState.OpenCloseLight(OFFLight, num); // 关灯
@@ -157,22 +157,21 @@ void dataRead(const String & data)
 // 用户自定义状态返回的心跳包回调函数
 void heartbeat()
 {
-    BUILTIN_SWITCH.print(LightState.LedState[0] ? "on" : "off"); //开/关组件
+    BUILTIN_SWITCH.print(LightState.LedState[Light0] ? "on" : "off"); // 开/关组件
 
-    ButtonLight1.icon(LightState.LedState[1] ? "far fa-lightbulb-on" : "far fa-lightbulb"); //设置图标
-    ButtonLight1.color(LightState.LedState[1] ? "Blue" : "Black");  //设置颜色
-    ButtonLight1.print(LightState.LedState[1] ? "on" : "off"); // 按键组件
+    ButtonLight1.icon(LightState.LedState[Light1] ? "far fa-lightbulb-on" : "far fa-lightbulb"); //设置图标
+    ButtonLight1.color(LightState.LedState[Light1] ? "Blue" : "Black");  //设置颜色
+    ButtonLight1.print(LightState.LedState[Light1] ? "on" : "off"); // 按键组件
 
-    ButtonLight2.icon(LightState.LedState[2] ? "far fa-lightbulb-on" : "far fa-lightbulb"); //设置图标
-    ButtonLight2.color(LightState.LedState[2] ? "Blue" : "Black");  //设置颜色
-    ButtonLight2.print(LightState.LedState[2] ? "on" : "off"); // 按键组件
+    ButtonLight2.icon(LightState.LedState[Light2] ? "far fa-lightbulb-on" : "far fa-lightbulb"); //设置图标
+    ButtonLight2.color(LightState.LedState[Light2] ? "Blue" : "Black");  //设置颜色
+    ButtonLight2.print(LightState.LedState[Light2] ? "on" : "off"); // 按键组件
 
-    ButtonLight3.icon(LightState.LedState[3] ? "far fa-lightbulb-on" : "far fa-lightbulb"); //设置图标
-    ButtonLight3.color(LightState.LedState[3] ? "Blue" : "Black");  //设置颜色
-    ButtonLight3.print(LightState.LedState[3] ? "on" : "off"); // 按键组件
+    ButtonLight3.icon(LightState.LedState[Light3] ? "far fa-lightbulb-on" : "far fa-lightbulb"); //设置图标
+    ButtonLight3.color(LightState.LedState[Light3] ? "Blue" : "Black");  //设置颜色
+    ButtonLight3.print(LightState.LedState[Light3] ? "on" : "off"); // 按键组件
         
     char SprintfChar[30];
-
     sprintf(SprintfChar, "%ld天%ld时%ld分", 
            (LightState.SysRunTime)/3600L/24L,(LightState.SysRunTime)/3600L%24L,(LightState.SysRunTime)/60L%60L);
     TextBlinkerTime.icon("far fa-shipping-timed");

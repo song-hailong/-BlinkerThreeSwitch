@@ -55,6 +55,7 @@ void MyLightState::MyLightInitIO()
     digitalWrite(Relay1IO, OFFLight);
     digitalWrite(Relay2IO, OFFLight);
     digitalWrite(Relay3IO, OFFLight);
+    this->LedState[Light0] = false;
     this->LedState[Light1] = false;
     this->LedState[Light2] = false;
     this->LedState[Light3] = false;
@@ -71,8 +72,20 @@ void MyLightState::OpenCloseLight(bool ON_OFF, uint8_t num)
     {
         digitalWrite(this->RelayIO[num], ON_OFF);  // 开/关灯
         this->LedState[num] = ON_OFF;      // 切换灯的状态
+
+        //更新首页开关状态
+        if (this->LedState[0] == OFFLight && (LedState[1] == ONLight || LedState[2] == ONLight || LedState[3] == ONLight))
+        {
+            this->LedState[0] = ONLight;
+        }
+        else if (this->LedState[0] == ONLight && LedState[1] == OFFLight && LedState[2] == OFFLight && LedState[3] == OFFLight)
+        {
+            this->LedState[0] = OFFLight;
+        }
+
+        heartbeat();    // 更新app显示
     }
-    heartbeat();    // 更新app显示
+    
 }
 
 
