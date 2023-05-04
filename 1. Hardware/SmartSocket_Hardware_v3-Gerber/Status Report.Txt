@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [SmartSocket_Hardware_v3.PrjPcb]
+   Generated File[SmartSocket_v3-RoundHoles.TXT]
+   Generated File[SmartSocket_v3-SlotHoles.TXT]
+   Generated File[SmartSocket_v3.LDP]
+   Generated File[SmartSocket_v3.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 14:53:58 On 2023/5/4

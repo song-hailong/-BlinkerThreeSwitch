@@ -1,0 +1,23 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: SmartSocket_v3.PcbDoc   2023/5/4  14:53:58
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : SmartSocket_v3-RoundHoles.TXT
+ASCII SlotHoles File : SmartSocket_v3-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.2mm)                                              Round             9         PTH        0.35inch (8.80mm)
+T2      10mil (0.254mm)                                           Round             9         PTH        0.27inch (6.79mm)
+T3      12mil (0.3mm)                                             Round             71        PTH        7.15inch (181.56mm)
+T4      32mil (0.8mm)                                             Slot              4         PTH        1.46inch (37.02mm)
+T5      35mil (0.9mm)                                             Round             4         PTH        0.30inch (7.62mm)
+T6      39mil (1mm)                                               Round             6         PTH        0.71inch (17.93mm)
+T7      47mil (1.2mm)                                             Round             12        PTH        5.55inch (140.96mm)
+T8      51mil (1.3mm)                                             Round             4         PTH        0.59inch (15.00mm)
+T9      30mil (0.75mm)                                            Round             2         NPTH       0.23inch (5.78mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              121
+
+Total Processing Time (hh:mm:ss) : 00:00:00
